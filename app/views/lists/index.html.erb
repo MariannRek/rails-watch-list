@@ -1,0 +1,25 @@
+<div class="cover">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <h1>My lists</h1>
+  </div>
+  <div>
+   <div class="row">
+      <% @lists.each do |list| %>
+        <div class="col-12 col-sm-6 col-md-4 m-3 ">
+          <%= link_to list_path(list) do %>
+            <div class="card">
+              <p><%= list.name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Create new list", new_list_path %>
